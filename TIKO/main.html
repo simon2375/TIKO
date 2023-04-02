@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- pongo .value a lo que es input -->
+	<script type="text/javascript">
+		function calcular(){ 
+
+		var ingreso = document.getElementById("ingresos").value
+		var gasto = document.getElementById("gastos").value
+		var disponible = document.getElementById("disponible")
+		var ahorrar = document.getElementById("ahorrar").value
+		var disponible_mes = document.getElementById("disponible mes")
+		var gastar_dia = document.getElementById("gastar dia")
+		var gastar_semana= document.getElementById("gastar semana")
+
+		disponible.value =ingreso-gasto
+
+		disponible_mes.value = disponible.value - ahorrar
+		gastar_dia.value = disponible_mes.value/(30 - new Date().getDate())
+		gastar_semana.value = disponible_mes.value/(7 - new Date().getDay())
+
+	}
+
+
+
+	</script>
+
+	<style type="text/css">
+
+	body{
+		font-family: Georgia, serif;
+	}
+
+	h1,h4{color: white;
+		  text-shadow: 1px 0 black, -1px 0 black, 0 2px black, 0 -1px black,
+               1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+          font: ge
+	}
+
+	.out {height: 100px
+	}
+
+	.in {
+		height: 140px;
+	}
+		
+	div {
+		border: 5px;
+		border-radius: 20px;
+		border: orange;
+		width: 400px
+	}
+
+	input{
+
+		border-radius: 20px
+		margin: 20px;
+	}
+
+
+	</style>
+
+
+	<title>TU AHORRO</title>
+</head>
+<body onkeyup ="calcular()">
+	<br>
+<form>
+	<center>
+		<!--gastos-->
+		<div class="in" style="background-color: #277BC0; margin-left: 15%; float:left;">;
+			<h1>Gastos:</h1>
+			<input type="text" id = "gastos" name="gastos">
+		</div>
+
+		<!--ingresos-->
+		<div class="in" style="margin-right: 15%; float: right; background-color: #FFB200">;
+			<h1>Ingresos:</h1>
+			<input type="text" id = "ingresos" name="ingresos">
+		</div>
+
+		<div class="in" style = "display: inline-block; margin: 50px 0px; background-color: #277BC0"> 
+
+			<h1> Cuanto quiero ahorrar este mes? </h1>
+			<input type="text" name="ahorrar" id="ahorrar"> </input>
+		</div>
+
+		<br>
+
+	<section >
+
+		<!--disponible--> 
+		<div class="out" style = "margin-left:  15%; float:left; background-color: #FFB200"> 
+
+			<h3> Disponible: </h3>
+			<input type="text" name="disponible" id="disponible"> </input>
+		</div>
+
+		<!--disponible este mes-->
+		<div  class="out" style = "margin-right: 15%; float:right; background-color: #277BC0"> 
+
+			<h3> Disponible para gastar este mes: </h3>
+			<input type="text" name="disponible mes" id="disponible mes"> </input>
+		</div>
+
+		<br>
+
+		<div class="out" style = "margin-left:  15%; margin-top: 20px;  float:left; background-color: #277BC0"> 
+
+			<h3> Cuanto puedo gastar por dia? </h3>
+			<input type="text" name="gastar dia" id="gastar dia"> </input>
+		</div>
+
+		<div class="out" style = "margin-right: 15%; margin-top: 20px; float:right; background-color: #FFB200"> 
+
+			<h3> Cuanto gastar por semana? </h3>
+			<input type="text" name="gastar semana" id="gastar semana"> </input>
+		</div>
+
+	</section>
+
+	</center>
+</form>
+</body>
+</html>
